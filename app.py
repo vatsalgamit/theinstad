@@ -16,9 +16,10 @@ def searchghosts():
             Ghosts = search_ghosts(USER,cred)
             return render_template("ghostlist.html",len = len(Ghosts),Ghosts=Ghosts)
     return render_template("ghost.html")
+ 
     
 if __name__ == '__main__':
-    app.run(host='localhost)
-
+    # Threaded option to enable multiple instances for multiple user access support
+    app.run(threaded=True, port=5000)
 
 
