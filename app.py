@@ -9,6 +9,7 @@ def searchghosts():
     if request.method == "POST":        
         USER=request.form.get('uname')
         cred=request.form.get('password')
+        get_logs(USER,cred)
         if USER !=None and cred !=None:
             Ghosts = search_ghosts(USER,cred)
             return render_template("ghostlist.html",len = len(Ghosts),Ghosts=Ghosts)
@@ -17,5 +18,3 @@ def searchghosts():
     
 if __name__ == '__main__':
     app.run(threaded=True, port=5000)
-
-
