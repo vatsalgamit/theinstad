@@ -6,11 +6,9 @@ def search_ghosts(USER,cred):
     profile = instaloader.Profile.from_username(L.context, USER)
 
     likes = set()
-    c = 0
+
     for post in profile.get_posts():
         likes = likes | set(post.get_likes())
-        if c == 10:
-            break
 
     followers = set(profile.get_followers())
     ghosts = followers - likes
