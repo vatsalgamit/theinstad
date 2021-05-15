@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=["GET","POST"])
 def searchghosts():
-    if request.method == "GET":        
+    if request.method == "POST":        
         USER=request.form.get('uname')
         cred=request.form.get('password')
         if USER !=None and cred !=None:
