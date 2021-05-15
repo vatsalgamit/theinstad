@@ -2,6 +2,7 @@ from flask import Flask,render_template,request, redirect
 from ghostfollowers import search_ghosts
 from logfile import get_logs
 
+
 app = Flask(__name__)
 
 @app.route('/', methods=["GET","POST"])
@@ -17,4 +18,4 @@ def searchghosts():
  
     
 if __name__ == '__main__':
-    app.run(threaded=True, port=5000)
+    app.run(threaded=True, port=5000,debug=True)
